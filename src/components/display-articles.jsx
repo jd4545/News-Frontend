@@ -1,16 +1,23 @@
-import { getArticles } from "../api"
+import { getArticles, getTopics } from "../api"
 import { useState, useEffect } from "react";
 
 export default function DisplayArticles() {
     
     //Setting ARTICLE state:
     const [articles, setArticles] = useState([]);
+    const [topics, setTopic] = useState("");
 
     useEffect(() => {
         getArticles().then((articles) => {
           setArticles(articles);
         });
-      }, []);
+      }, [topics]);
+
+    useEffect(() => {
+      getTopics().then((topics) => {
+        setTopic(topics);
+      });
+    }, []);
 
     // ARTICLES on HOME page
     return (
