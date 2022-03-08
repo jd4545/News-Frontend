@@ -1,23 +1,41 @@
 import { getArticles } from "../api"
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Error from "./error";
 
 export default function DisplayArticles() {
     
-  //Setting ARTICLE & ISLOADING state:
+  // Setting initial ARTICLE & ISLOADING state:
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] =useState(null)
 
-  // useEffect to fetch component from backend
+  // useParams to get topic.slug
+  const {slug} = useParams()
+
+  // useEffect to fetch Articles from backend and set new state:
   useEffect(() => {
     setIsLoading(true)
-      getArticles().then((articles) => {
+      getArticles(slug).then((articles) => {
         setArticles(articles);
+        setIsLoading(false) // to skip isLoading and render page
+        setError(null) // to clear error after prior catch
+      })
+      .catch(({
+        response: {
+          data: {msg},
+        status        
+      },
+      }) => {
+        setError({ msg, status});
         setIsLoading(false)
-      });
-    }, []);
+      })
+    }, [slug]);
 
   // conditional loading... render 
   if (isLoading) return <h2>loading articles...</h2>
+
+  if(error) return <Error status={error.status} msg={error.msg} />
 
   // render ARTICLES on HOME page
   return (
