@@ -9,7 +9,6 @@ export default function Nav() {
     // useEffect to fetch topics from backend
     useEffect(() => {
         getTopics().then((topics) => {
-            console.log(topics)
           setTopics(topics);
         });
       }, []);

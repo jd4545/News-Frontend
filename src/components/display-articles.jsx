@@ -1,11 +1,12 @@
 import { getArticles } from "../api"
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Error from "./error";
 
 export default function DisplayArticles() {
     
-  // Setting initial ARTICLE & ISLOADING state:
+  // Setting initial articles, isLoading & error STATE:
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] =useState(null)
@@ -43,7 +44,9 @@ export default function DisplayArticles() {
       {articles.map((article) => {
         return (
           <div key={article.article_id} className="article-card">
-              <h3 className="article-title">{article.title} </h3>
+              <Link to={`/articles/${article.article_id}`}>
+                <h3 className="article-title">{article.title} </h3>
+              </Link>
               <div className ="article-card-details">
             <div className="article-left">
               <dt>{article.author}</dt>
