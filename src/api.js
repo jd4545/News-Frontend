@@ -6,7 +6,7 @@ const ncNewsApi = axios.create({
 
 export function getArticles() {
   return ncNewsApi.get("/articles").then(({ data: { articles } }) => {
-    console.log(articles);
+    // console.log(articles);
     return articles;
   });
 }

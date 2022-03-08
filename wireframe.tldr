@@ -3480,6 +3480,28 @@
               "font": "script",
               "textAlign": "middle"
             }
+          },
+          "c7a5553a-97b5-47ba-2846-f59f8bb26bf6": {
+            "id": "c7a5553a-97b5-47ba-2846-f59f8bb26bf6",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 135,
+            "point": [
+              63.5,
+              651
+            ],
+            "rotation": 0,
+            "text": "CSS: Add icons for topics, author, etc",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
           }
         },
         "bindings": {
