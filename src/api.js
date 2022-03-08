@@ -25,3 +25,9 @@ export function getArticleById(articleId) {
       return article;
     });
 }
+
+export function getUsers() {
+  return ncNewsApi.get("/users").then(({ data: { users } }) => {
+    return users;
+  });
+}
