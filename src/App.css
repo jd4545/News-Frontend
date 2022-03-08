@@ -1,9 +1,9 @@
 .App {
-  background-color: rgb(16, 138, 0);
+  background-color: rgb(0, 150, 155);
 }
 
 .header {
-  background-color: rgb(73, 73, 75);
+  background-color: rgb(0, 73, 75);
   text-shadow: 20px;
   text-align: center;
   color: whitesmoke;
@@ -12,25 +12,26 @@
 
 .articles-list-area {
   border: 2px;
-  background-color: rgb(73, 73, 75);
+  background-color: rgb(0, 73, 75);
 }
 
 .article-card {
-  border: solid 2px;
+  border: solid 5px;
   border-radius: 2%;
-  background-color: rgb(191, 190, 192);
+  background-color: rgb(241, 241, 241);
   margin-left: 10px;
   margin-right: 10px;
+  padding: 0%;
 }
 .article-title {
   color: black;
-  padding: 3%;
+  padding: 1%;
 }
 
 .article-card-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 3%;
+  padding: 1%;
 }
 .article-left {
   align-items: left;
@@ -38,4 +39,11 @@
 .article-right {
   align-items: right;
   text-align: end;
+}
+.nav--list {
+  padding: 2%;
+}
+.nav--topic__link {
+  margin: 50px;
+  padding: 10px;
 }
