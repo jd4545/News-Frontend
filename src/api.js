@@ -17,3 +17,11 @@ export function getTopics() {
     return topics;
   });
 }
+
+export function getArticleById(articleId) {
+  return ncNewsApi
+    .get(`/articles/${articleId}`)
+    .then(({ data: { article } }) => {
+      return article;
+    });
+}
