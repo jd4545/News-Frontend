@@ -1,7 +1,8 @@
-import { getArticleById } from "../api";
+import { getArticleById, patchArticleById } from "../api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Error from "./error";
+import Vote from "./vote";
 
 export default function SingleArticle() {
 
@@ -16,7 +17,7 @@ export default function SingleArticle() {
     // useEffect to fetch Article from backend and set new state:
     useEffect(() => {
         setIsLoading(true)
-        getArticleById(article_id).then((article) => {
+        getArticleById(article_id).then((article) => { 
             setArticle(article);
             setIsLoading(false) // to skip isLoading and render page
             setError(null) // to clear error after prior catch
@@ -30,14 +31,31 @@ export default function SingleArticle() {
             setError({ msg, status});
             setIsLoading(false)
         })
-        }, []);
+        }, [article_id]);
 
-  // conditional loading... render 
-  if (isLoading) return <h2>loading article...</h2>
+    // conditional loading... render 
+    if (isLoading) return <h2>loading article...</h2>
 
-  if(error) return <Error status={error.status} msg={error.msg} />
-        console.log(article)
+    if(error) return <Error status={error.status} msg={error.msg} />
+        
+    // Article VOTE func:
+    function handleClick(article_id, vote) {
+        patchArticleById(article_id, vote)
+        .then(() => {
+        setArticle((updatedArticle) => {
+            // Optimistic Rendering:
+            const optiArticle = {...article};
+            optiArticle.votes += vote;
+            console.log("OR vote: ", optiArticle.votes)
+            return optiArticle;
+        // return {...article, votes: updatedArticle.votes}
+        })
+        })
+    }   
 
+    console.log("new vote: ", article.votes)    
+
+    // RENDER article
     return (
         <div key={article.article_id} >
         <h2 className="article--title">{article.title}</h2>
@@ -49,7 +67,10 @@ export default function SingleArticle() {
         <p className="article--body"> {article.body} </p>
         <div className="article-lowersection">
         <dt>Comments: {article.comment_count}</dt>
-        <dt>Votes: {article.votes}</dt>
+        <h4>Votes: {article.votes}</h4>
+        {/* <Vote /> */}
+        <button className="article--votes__button" onClick={()=> handleClick(article.article_id, 1)}>👍</button>
+        <button className="article--votes__button" onClick={()=> handleClick(article.article_id, -1)}>👎</button>
         </div>
         </div>
     )
