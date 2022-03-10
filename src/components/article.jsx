@@ -12,7 +12,7 @@ export default function SingleArticle() {
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] =useState(null)
   
-    // useParams to get topic.slug
+    // useParams to get article_id
     const {article_id} = useParams()
 
     // useEffect to fetch Article from backend and set new state:
@@ -44,7 +44,7 @@ export default function SingleArticle() {
         patchArticleById(article_id, vote)
         .then(() => {
         setArticle((updatedArticle) => {
-            // Optimistic Rendering:
+            // Add Optimistic Rendering later:
             const optiArticle = {...article};
             optiArticle.votes += vote;
             console.log("OR vote: ", optiArticle.votes)
