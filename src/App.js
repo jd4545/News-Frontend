@@ -5,20 +5,33 @@ import DisplayArticles from "./components/display-articles";
 import Error from "./components/error";
 import Nav from "./components/nav";
 import SingleArticle from "./components/article";
+import Users from "./components/users";
+import { useState } from "react";
+import { UserContext } from "./contexts/user-context";
+import Comments from "./components/comments";
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({ username: "tickle122" });
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header />
-        <Nav />
-        <Routes>
-          <Route path="/" element={<DisplayArticles />} />
-          <Route path="/topics/:slug" element={<DisplayArticles />} />
-          <Route path="/articles/:article_id" element={<SingleArticle />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </div>
+      <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
+        <div className="App">
+          <Header />
+          <Nav />
+          <Routes>
+            <Route path="/users" element={<Users />} />
+            <Route path="/" element={<DisplayArticles />} />
+            <Route path="/articles" element={<DisplayArticles />} />
+            <Route path="/topics/:slug" element={<DisplayArticles />} />
+            <Route path="/articles/:article_id" element={<SingleArticle />} />
+            <Route
+              path="/articles/:article_id/comments"
+              element={<Comments />}
+            />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </div>
+      </UserContext.Provider>
     </BrowserRouter>
   );
 }

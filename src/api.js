@@ -25,3 +25,25 @@ export function getArticleById(articleId) {
       return article;
     });
 }
+
+export function getUsers() {
+  return ncNewsApi.get("/users").then(({ data: { users } }) => {
+    return users;
+  });
+}
+
+export function patchArticleById(article_id, vote) {
+  return ncNewsApi
+    .patch(`/articles/${article_id}`, { inc_votes: vote })
+    .then(({ data: { article } }) => {
+      return article;
+    });
+}
+
+export function getComments(articleId) {
+  return ncNewsApi
+    .get(`/articles/${articleId}/comments`)
+    .then(({ data: { comments } }) => {
+      return comments;
+    });
+}
