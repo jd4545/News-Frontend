@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Error from "./error";
 import Vote from "./vote";
+import Comments from "./comments";
 
 export default function SingleArticle() {
 
@@ -66,11 +67,14 @@ export default function SingleArticle() {
         </div>
         <p className="article--body"> {article.body} </p>
         <div className="article-lowersection">
-        <dt>Comments: {article.comment_count}</dt>
         <h4>Votes: {article.votes}</h4>
         {/* <Vote /> */}
         <button className="article--votes__button" onClick={()=> handleClick(article.article_id, 1)}>👍</button>
         <button className="article--votes__button" onClick={()=> handleClick(article.article_id, -1)}>👎</button>
+        </div>
+        <div>
+            <h4>Comments: {article.comment_count} </h4>
+            <Comments />
         </div>
         </div>
     )

@@ -101,3 +101,15 @@
 .user--login__btnArea {
   align-items: right;
 }
+/* Comment cards  */
+.comment--card {
+  width: 80%;
+  align-content: center;
+  font-weight: 350;
+  border: solid 5px;
+  border-radius: 2%;
+  background-color: rgb(230, 230, 230);
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0%;
+}

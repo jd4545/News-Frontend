@@ -39,3 +39,11 @@ export function patchArticleById(article_id, vote) {
       return article;
     });
 }
+
+export function getComments(articleId) {
+  return ncNewsApi
+    .get(`/articles/${articleId}/comments`)
+    .then(({ data: { comments } }) => {
+      return comments;
+    });
+}

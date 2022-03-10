@@ -14,18 +14,5 @@ export default function Vote({vote, article_id, updateVote}) {
         <button className="article--votes__button" onClick={()=> handleClick(-1)}>👎</button>
         </section>
     )
-    // function updateVote(article_id, voteChange) {
-    //     patchArticleById(article_id, voteChange)
-    //     .catch(() => {
-    //     setArticle((article) => {
-    //         //Optimistic Rendering:
-    //         const optiArticle = {...article};
-    //         optiArticle.votes += voteChange;
-    //         console.log("OR vote: ", optiArticle.votes)
-    //         return optiArticle;
-    //     // return {...article, votes: updatedArticle.votes}
-    //     })
-    //     })
 
-    // }
 }
