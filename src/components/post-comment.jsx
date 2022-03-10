@@ -85,7 +85,7 @@ export default function CreateComment() {
                 </form>
             </main>
         <Message />
-        <IsPosting />
+        <IsPosting /><br/>
         <button className="user--login__btn">
             <Link to={`/articles/${article_id}`}><h4 id="articlereturn--postcomment">
                 Return to Article</h4></Link>
