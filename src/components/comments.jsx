@@ -42,7 +42,7 @@ return (
             return (
                 <div key={comment.comment_id} className="comment--card">
                     <h5>{comment.author}</h5>
-                    <dt>{comment.created_at.slice(0,-8).replace("T"," ")}</dt>
+                    <dt>{comment.created_at.slice(0,-8).replace("T"," ")}</dt><br />
                     <dt>{comment.body}</dt>
                     <dt>Votes: {comment.votes}</dt>
             </div>

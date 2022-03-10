@@ -47,3 +47,11 @@ export function getComments(articleId) {
       return comments;
     });
 }
+
+export function postComment(article_id, comment) {
+  return ncNewsApi
+    .post(`/articles/${article_id}/comments`, comment)
+    .then(({ data: { comment } }) => {
+      return comment;
+    });
+}
