@@ -33,7 +33,7 @@ export default function Comments() {
     }, [article_id]);
 
     // conditional loading... and Error render 
-    if (isLoading) return <h2>loading article...</h2>
+    if (isLoading) return <h2>loading comments...</h2>
     if(error) return <Error status={error.status} msg={error.msg} />
 
 return (
@@ -42,7 +42,7 @@ return (
             return (
                 <div key={comment.comment_id} className="comment--card">
                     <h5>{comment.author}</h5>
-                    <dt>{comment.created_at.slice(0,-8).replace("T"," ")}</dt>
+                    <dt>{comment.created_at.slice(0,-8).replace("T"," ")}</dt><br />
                     <dt>{comment.body}</dt>
                     <dt>Votes: {comment.votes}</dt>
             </div>

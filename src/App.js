@@ -9,6 +9,7 @@ import Users from "./components/users";
 import { useState } from "react";
 import { UserContext } from "./contexts/user-context";
 import Comments from "./components/comments";
+import CreateComment from "./components/post-comment";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({ username: "tickle122" });
@@ -24,6 +25,10 @@ function App() {
             <Route path="/articles" element={<DisplayArticles />} />
             <Route path="/topics/:slug" element={<DisplayArticles />} />
             <Route path="/articles/:article_id" element={<SingleArticle />} />
+            <Route
+              path="/articles/:article_id/comments"
+              element={<CreateComment />}
+            />
             <Route
               path="/articles/:article_id/comments"
               element={<Comments />}
