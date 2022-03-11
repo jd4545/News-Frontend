@@ -54,7 +54,7 @@ export default function CreateComment() {
     // conditional loading... and Error render 
     function IsPosting() {
         if (isPosting) {
-            return <p>posting article...</p> 
+            return <p>posting comment...</p> 
         } else {
             return ""
         }
