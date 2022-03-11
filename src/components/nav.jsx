@@ -13,8 +13,6 @@ export default function Nav({setSearchParams}) {
           setTopics(topics);
         });
       }, []);
-
-
   
     // render Navigation Bar on ALL pages
     return(

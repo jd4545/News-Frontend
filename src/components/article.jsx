@@ -54,12 +54,10 @@ export default function SingleArticle() {
         })
         })
     }   
-
-    console.log("new vote: ", article.votes)    
-
+  
     // RENDER article
     return (
-        <div key={article.article_id} >
+        <div key={article.article_id} className="article--overall">
         <h2 className="article--title">{article.title}</h2>
         <div className="article--details">
             <h3>{article.author}</h3>    

@@ -16,12 +16,19 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border: solid 10px;
+  border-color: black;
+  box-shadow: 0px 5px 15px;
+  margin: 0.5%;
 }
 .header--users__Link {
   background-color: rgb(0, 73, 75);
   text-shadow: 20px;
   text-align: center;
   color: whitesmoke;
+}
+#header--title {
+  text-decoration: none;
 }
 /* Articles */
 .articles--overall {
@@ -34,6 +41,10 @@
   color: rgb(241, 241, 241);
   padding-left: 3%;
   padding-right: 3%;
+  border: solid 10px;
+  border-color: black;
+  box-shadow: 0px 5px 15px;
+  margin: 0.5%;
 }
 .articles--sort__click {
   color: rgb(247, 247, 247);
@@ -51,8 +62,8 @@
   margin-right: 10px;
   padding: 3%;
   background-color: rgb(241, 241, 241);
-  margin: 1%;
-  box-shadow: 5px;
+  margin: 2%;
+  box-shadow: 0px 5px 15px;
   /* display: flex;
   justify-content: space-between; */
 }
@@ -92,9 +103,17 @@
   color: rgb(241, 241, 241);
 }
 /* Individual Article Page */
+.article--overall {
+  background-color: rgb(241, 241, 241);
+}
 .article--title {
+  padding-left: 5%;
   background-color: rgb(0, 73, 75);
   color: white;
+  border: solid 10px;
+  border-color: black;
+  box-shadow: 0px 5px 15px;
+  margin: 0.5%;
 }
 .article--body {
   background-color: white;
@@ -105,7 +124,7 @@
   margin-right: 10px;
   padding: 3%;
   background-color: rgb(241, 241, 241);
-  box-shadow: 5px;
+  box-shadow: 0px 5px 15px;
 }
 .article--votes__button {
   padding: 2%;
@@ -119,18 +138,27 @@
   text-shadow: 20px;
   color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
+  border: solid 10px;
+  border-color: black;
+  box-shadow: 0px 5px 15px;
+  margin: 0.5%;
+  padding: 2%;
 }
 .users {
   border: 2px;
   background-color: rgb(0, 73, 75);
 }
 .user--card {
-  border: solid 5px;
-  border-radius: 2%;
+  background-color: white;
+  border: solid 3px;
+  border-color: rgb(15, 15, 15);
+  border-radius: 3%;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 3%;
   background-color: rgb(241, 241, 241);
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 0%;
+  margin: 1%;
+  box-shadow: 0px 5px 15px;
 }
 .user--login__btn {
   background-color: rgb(0, 73, 75);
@@ -154,6 +182,7 @@
   padding: 1%;
   margin: 2%;
   align-self: center;
+  box-shadow: 0px 5px 15px;
 }
 /* Post Comment page */
 #inpur--comment {
