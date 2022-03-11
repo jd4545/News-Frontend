@@ -1,24 +1,38 @@
 import { getArticles } from "../api"
-import { useParams } from "react-router-dom";
+import { useParams, Link, useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Error from "./error";
 
 export default function DisplayArticles() {
-    
+  
+  // Setting searchParams and sort_by array
+  const [searchParams, setSearchParams] = useSearchParams({});
+  const sort_by = ["created_at", "title", "votes", "author"];
+
   // Setting initial articles, isLoading & error STATE:
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] =useState(null)
+  const [ord, setOrd] = useState("DESC")
 
-  // useParams to get topic.slug
-  const {slug} = useParams()
+  // useParams to get topic.slug & set other parameters:
+  const {slug} = useParams();
+  let sort = searchParams.get("sort_by")
+
+  // Toggle order function 
+  function toggle() {
+    if (ord === "ASC") {
+     setOrd("DESC")
+    } else if (ord === "DESC") {
+      setOrd("ASC")}
+  }
 
   // useEffect to fetch Articles from backend and set new state:
   useEffect(() => {
     setIsLoading(true)
-      getArticles(slug).then((articles) => {
+      getArticles(slug, sort, ord).then((articles) => {
         setArticles(articles);
+
         setIsLoading(false) // to skip isLoading and render page
         setError(null) // to clear error after prior catch
       })
@@ -31,7 +45,7 @@ export default function DisplayArticles() {
         setError({ msg, status});
         setIsLoading(false)
       })
-    }, [slug]);
+    }, [slug, sort, ord]);
 
   // conditional loading... render 
   if (isLoading) return <h2>loading articles...</h2>
@@ -40,6 +54,19 @@ export default function DisplayArticles() {
 
   // render ARTICLES on HOME page
   return (
+    <div className="articles--overall">
+          <div className="articles--sort"><h4>Sort by: </h4>
+          {sort_by.map((sort)=> {
+           return (<ul>
+              <li className="articles--sort__click" 
+              onClick={()=>{ setSearchParams({sort_by: sort})}}>
+                {sort}
+              </li>
+            </ul>
+            )
+          })}
+          </div>
+          <button className="user--login__btn" onClick={()=> {toggle()}}>Order: {ord}</button>
       <div className="articles-list-area">
       {articles.map((article) => {
         return (
@@ -62,6 +89,6 @@ export default function DisplayArticles() {
         );
       })}
       </div>
-
+      </div>
   )
 }

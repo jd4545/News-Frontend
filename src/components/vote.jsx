@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { patchArticleById } from "../api";
 
+// component currently unconnected to App
+
 export default function Vote({vote, article_id, updateVote}) {
     const [voteChange, setVoteChange] = useState(0);
 

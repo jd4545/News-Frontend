@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { getTopics } from "../api";
 
-export default function Nav() {
+export default function Nav({setSearchParams}) {
     //Setting TOPICS state:
     const [topics, setTopics] = useState([]);
+
 
     // useEffect to fetch topics from backend
     useEffect(() => {
@@ -12,26 +13,31 @@ export default function Nav() {
           setTopics(topics);
         });
       }, []);
+
+
   
     // render Navigation Bar on ALL pages
     return(
         <nav>
-          <ul className="nav--list">
-              <li className="nav--topic" >
-                  <Link className="nav--topic__Link" to="/">
-                      Show All
-                  </Link>
-              </li>
-              {topics.map(({slug}) => {
-            return (
-                <li key ={slug} className="nav--topic" >
-                    <Link className="nav--topic__Link" to={`/topics/${slug}`}>
-                        {slug}
+          <div>
+            <ul className="nav--list">
+                <li className="nav--topic" >
+                    <Link className="nav--topic__Link" to="/">
+                        Show All
                     </Link>
                 </li>
-            );
-          })}
-          </ul>
+                {topics.map(({slug}) => {
+              return (
+                  <li key ={slug} className="nav--topic" >
+                      <Link className="nav--topic__Link" to={`/topics/${slug}`}>
+                          {slug}
+                      </Link>
+                  </li>
+              );
+            })}
+            </ul>
+          </div>
+
         </nav>
   )
 }
