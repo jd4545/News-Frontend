@@ -4,9 +4,11 @@ const ncNewsApi = axios.create({
   baseURL: "https://jdsnewsapp.herokuapp.com/api/",
 });
 
-export function getArticles(slug) {
+export function getArticles(slug, sortBy, ord) {
   return ncNewsApi
-    .get("/articles", { params: { topic: slug } })
+    .get("/articles", {
+      params: { topic: slug, sort_by: sortBy, order: ord },
+    })
     .then(({ data: { articles } }) => {
       return articles;
     });

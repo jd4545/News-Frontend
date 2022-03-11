@@ -15,7 +15,7 @@
   color: whitesmoke;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .header--users__Link {
   background-color: rgb(0, 73, 75);
@@ -24,17 +24,35 @@
   color: whitesmoke;
 }
 /* Articles */
+.articles--overall {
+  background-color: rgb(0, 73, 75);
+}
+.articles--sort {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(241, 241, 241);
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.articles--sort__click {
+  color: rgb(247, 247, 247);
+}
 .articles-list-area {
   border: 2px;
   background-color: rgb(0, 73, 75);
 }
 .article-card {
-  border: solid 5px;
-  border-radius: 2%;
-  background-color: rgb(241, 241, 241);
+  background-color: white;
+  border: solid 3px;
+  border-color: rgb(15, 15, 15);
+  border-radius: 3%;
   margin-left: 10px;
   margin-right: 10px;
-  padding: 0%;
+  padding: 3%;
+  background-color: rgb(241, 241, 241);
+  margin: 1%;
+  box-shadow: 5px;
   /* display: flex;
   justify-content: space-between; */
 }
@@ -56,21 +74,22 @@
 }
 /* Nav bar */
 .nav--list {
-  border: solid 2px;
+  /* border: solid 2px; */
   /* padding: 5%; */
   color: antiquewhite;
   text-shadow: 20px;
   text-align: center;
-  background-color: white;
+  background-color: rgb(80, 49, 15);
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  background-color: rgb(241, 241, 241);
 }
 .nav--topic__link {
-  margin: 50px;
-  padding: 10px;
+  /* margin: 50px; */
   text-decoration: none;
+  color: rgb(241, 241, 241);
 }
 /* Individual Article Page */
 .article--title {
@@ -80,13 +99,18 @@
 .article--body {
   background-color: white;
   border: solid 3px;
+  border-color: rgb(0, 73, 75);
   border-radius: 3%;
   margin-left: 10px;
   margin-right: 10px;
   padding: 3%;
   background-color: rgb(241, 241, 241);
+  box-shadow: 5px;
 }
 .article--votes__button {
+  padding: 2%;
+}
+.article--details {
   padding: 2%;
 }
 /* Users page */
@@ -121,12 +145,15 @@
   width: 80%;
   align-content: center;
   font-weight: 350;
-  border: solid 5px;
-  border-radius: 2%;
+  border: solid 2px;
+  border-radius: 3%;
+  border-color: (0, 73, 75);
   background-color: rgb(230, 230, 230);
   margin-left: 10px;
   margin-right: 10px;
-  padding: 0%;
+  padding: 1%;
+  margin: 2%;
+  align-self: center;
 }
 /* Post Comment page */
 #inpur--comment {
