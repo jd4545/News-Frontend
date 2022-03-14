@@ -21,7 +21,7 @@ export default function Nav({setSearchParams}) {
             <ul className="nav--list">
                 <li className="nav--topic" >
                     <Link className="nav--topic__Link" to="/">
-                        Show All
+                        Home
                     </Link>
                 </li>
                 {topics.map(({slug}) => {

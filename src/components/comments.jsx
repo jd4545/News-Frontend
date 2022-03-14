@@ -75,16 +75,16 @@ export default function Comments() {
     )
 
 return (
-    <div>
+    <div id="comment--section">
         {comments.map((comment)=> {
             return (
-                <div key={comment.comment_id} className="comment--card">
-                    <h5>{comment.author}</h5>
-                    <dt>{comment.created_at.slice(0,-8).replace("T"," ")}</dt><br />
-                    <dt>{comment.body}</dt>
-                    <dt>Votes: {comment.votes}</dt>
+                <div key={comment.comment_id} id="comment--card">
+                    <h5 className="comment--detail">{comment.author}</h5>
+                    <dt className="comment--detail">{comment.created_at.slice(0,-8).replace("T"," ")}</dt><br />
+                    <dt className="comment--detail">{comment.body}</dt>
+                    <dt className="comment--detail">Votes: {comment.votes}</dt>
                     {comment.author===loggedInUser.username && isDeleting===false ?
-                     <button onClick={()=>{handleClick(comment.comment_id)}} > Delete </button> :
+                     <button class="user--login__btn" onClick={()=>{handleClick(comment.comment_id)}} > Delete </button> :
                       <p></p> }  
                     <Message />
             </div>  

@@ -55,9 +55,9 @@ export default function DisplayArticles() {
   // render ARTICLES on HOME page
   return (
     <div className="articles--overall">
-          <div className="articles--sort"><h4>Sort by: </h4>
+          <div className="articles--sort"><p> Sort by: </p>
           {sort_by.map((sort)=> {
-           return (<ul>
+           return (<ul className="articles--sort">
               <li className="articles--sort__click" 
               onClick={()=>{ setSearchParams({sort_by: sort})}}>
                 {sort}
@@ -66,7 +66,7 @@ export default function DisplayArticles() {
             )
           })}
           </div>
-          <button className="user--login__btn" onClick={()=> {toggle()}}>Order: {ord}</button>
+          <button id="articles--order__btn" onClick={()=> {toggle()}}>Order: {ord}</button>
       <div className="articles-list-area">
       {articles.map((article) => {
         return (

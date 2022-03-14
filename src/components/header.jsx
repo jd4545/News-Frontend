@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <header className="header">
             {/* <Link to="/" id="header--title"> */}
-            <h1 >
+            <h1 id="header--title">
                 NC News
             </h1>
             {/* </Link> */}
