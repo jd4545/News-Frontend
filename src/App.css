@@ -8,7 +8,7 @@
     "Lucida Sans", Arial, sans-serif;
   list-style-type: none;
 }
-/* Header */
+/* =====Header===== */
 .header {
   background-color: rgb(0, 73, 75);
   text-align: center;
@@ -37,7 +37,7 @@
 #header--title {
   text-decoration: none;
 }
-/* Articles */
+/* =====Articles===== */
 .articles--overall {
   background-color: rgb(0, 73, 75);
 }
@@ -104,7 +104,7 @@
   align-items: right;
   text-align: end;
 }
-/* Nav bar */
+/* =====Nav bar===== */
 .nav--list {
   /* border: solid 2px; */
   /* padding: 5%; */
@@ -117,14 +117,16 @@
   align-items: center;
   justify-content: space-around;
   background-color: rgb(241, 241, 241);
+  margin-right: 6%;
 }
-.nav--topic {
+
+.nav--topic__Link {
   font-size: larger;
   font-weight: bold;
   text-decoration: none;
   color: rgb(0, 73, 75);
 }
-/* Individual Article Page */
+/* =====Individual Article Page===== */
 .article--overall {
   background-color: rgb(241, 241, 241);
 }
@@ -175,33 +177,47 @@
 #article--votes__header {
   margin-right: 30px;
 }
-/* Users page */
-.users--header__banner {
-  background-color: rgb(0, 73, 75);
-  text-shadow: 20px;
-  color: whitesmoke;
-  font-family: Arial, Helvetica, sans-serif;
-  border: solid 10px;
-  border-color: black;
-  box-shadow: 0px 5px 15px;
-  margin: 0.5%;
-  padding: 2%;
-}
+/* =====Users page===== */
 .users {
+  margin: 6%;
   border: 2px;
   background-color: rgb(0, 73, 75);
+  color: rgb(241, 241, 241);
+}
+#users--userheader {
+  padding-top: 2%;
+  margin-left: 2%;
+  align-items: center;
+}
+.users--header__banner {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  background-color: rgb(241, 241, 241);
+  /* text-align: left; */
+  color: whitesmoke;
+  padding: 2%;
+  border: solid 1px;
+  border-color: black;
+  box-shadow: 0px 5px 15px;
+  border-radius: 3%;
+  margin: 1%;
+  color: rgb(0, 73, 75);
+  justify-content: space-between;
 }
 .user--card {
-  background-color: white;
   border: solid 3px;
   border-color: rgb(15, 15, 15);
   border-radius: 3%;
   margin-left: 10px;
   margin-right: 10px;
   padding: 3%;
+  color: rgb(0, 73, 75);
   background-color: rgb(241, 241, 241);
   margin: 1%;
   box-shadow: 0px 5px 15px;
+  display: flex;
+  justify-content: space-between;
 }
 .user--login__btn {
   background-color: rgb(0, 73, 75);
@@ -209,10 +225,10 @@
   padding: 1.2%;
   margin: 2%;
 }
-.user--login__btnArea {
+/* .user--login__btnArea {
   align-items: right;
-}
-/* Comment cards  */
+} */
+/* =====Comment cards=====  */
 .comment--section {
   background-color: rgb(230, 230, 230);
   margin: 5%;

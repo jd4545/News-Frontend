@@ -24,11 +24,11 @@ export default function Users() {
     // RENDER user list
     return (
         <div className="users">
+          <h2 id="users--userheader"> Users </h2>
           <div className="users--header__banner">
-          <h2> Userlist: </h2>
           {/* Shows logged in user: */}
           <h3> { (loggedInUser.username) ?
-            `Logged in as: ${loggedInUser.username}`
+            `Logged in user: ${loggedInUser.username}`
             : `Logged out`
         }
          </h3>
@@ -37,7 +37,8 @@ export default function Users() {
             onClick={() => setLoggedInUser([])}>Log out
             </button>
           </div>
-          {users.map((user) => {
+          <h3 id="users--userheader"> List of users: </h3>
+          {users.map((user) => {  
         return (
           <div className="user--card">
             <h3>{user.username} </h3>
