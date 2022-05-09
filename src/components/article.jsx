@@ -48,7 +48,6 @@ export default function SingleArticle() {
             // Add Optimistic Rendering later:
             const optiArticle = {...article};
             optiArticle.votes += vote;
-            console.log("OR vote: ", optiArticle.votes)
             return optiArticle;
         // return {...article, votes: updatedArticle.votes}
         })

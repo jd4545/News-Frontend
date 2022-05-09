@@ -44,7 +44,6 @@ export default function Comments() {
 
     // handleClick function to DELETE comment
     function handleClick(comment_id) {
-        console.log(comment_id)
         setIsDeleting(true); // to show that article is deleting
         setMessage("Deleting comment...")
         deleteComment(comment_id).then((comment)=> {
