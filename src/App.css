@@ -160,6 +160,7 @@
   padding: 3%;
   background-color: rgb(241, 241, 241);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  max-width: 1200px;
 }
 .article--votes__button {
   border: solid 2px;
@@ -191,6 +192,7 @@
   border: 2px;
   background-color: rgb(0, 73, 75);
   color: rgb(241, 241, 241);
+  max-width: 1200px;
 }
 #users--userheader {
   padding-top: 2%;
@@ -256,15 +258,20 @@
   margin: 5%;
   align-self: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  max-width: 1000px;
 }
 .comment--detail {
   background-color: rgb(230, 230, 230);
 }
 /* Post Comment page */
-#inpur--comment {
+.comment--form{
+  max-width: 1200px;
+}
+#input--comment {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 #articlereturn--postcomment {
   text-align: center;
