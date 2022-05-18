@@ -18,8 +18,6 @@ export default function Users() {
         setUsers(users);
       });
     }, []);
-
-    console.log("logged in:", loggedInUser)
     
     // RENDER user list
     return (

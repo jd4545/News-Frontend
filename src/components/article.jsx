@@ -48,7 +48,6 @@ export default function SingleArticle() {
             // Add Optimistic Rendering later:
             const optiArticle = {...article};
             optiArticle.votes += vote;
-            console.log("OR vote: ", optiArticle.votes)
             return optiArticle;
         // return {...article, votes: updatedArticle.votes}
         })
@@ -61,18 +60,18 @@ export default function SingleArticle() {
         <h2 className="article--title">{article.title}</h2>
         <div className="article--details">
             <h3>{article.author}</h3>    
-            <dt>{article.topic}</dt>
             <dt>{article.created_at.slice(0,-8).replace("T"," ")}</dt>
+            <dt>{article.topic}</dt>
         </div>
         <p className="article--body"> {article.body} </p>
         <div className="article-lowersection">
-        <h4 id="article--votes__header">Votes: {article.votes}</h4>
+        <h4 id="article--votes__header">{article.votes} votes</h4>
         {/* <Vote /> */}
         <button className="article--votes__button" onClick={()=> handleClick(article.article_id, 1)}>👍</button>
         <button className="article--votes__button" onClick={()=> handleClick(article.article_id, -1)}>👎</button>
         </div>
         <div className="article-lowersection__h4">
-            <h4 >Comments: {article.comment_count} </h4> 
+            <h4 >{article.comment_count} comments</h4> 
             <Link to={`/articles/${article_id}/comments`}><button className="user--login__btn">Post Comment</button></Link>
             <Comments />
         </div>

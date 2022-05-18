@@ -44,7 +44,6 @@ export default function Comments() {
 
     // handleClick function to DELETE comment
     function handleClick(comment_id) {
-        console.log(comment_id)
         setIsDeleting(true); // to show that article is deleting
         setMessage("Deleting comment...")
         deleteComment(comment_id).then((comment)=> {
@@ -82,7 +81,8 @@ return (
                     <h5 className="comment--detail">{comment.author}</h5>
                     <dt className="comment--detail">{comment.created_at.slice(0,-8).replace("T"," ")}</dt><br />
                     <dt className="comment--detail">{comment.body}</dt>
-                    <dt className="comment--detail">Votes: {comment.votes}</dt>
+                    <br/>
+                    <dt className="comment--detail">{comment.votes} votes</dt>
                     {comment.author===loggedInUser.username && isDeleting===false ?
                      <button class="user--login__btn" onClick={()=>{handleClick(comment.comment_id)}} > Delete </button> :
                       <p></p> }  

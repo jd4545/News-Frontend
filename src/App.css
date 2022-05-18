@@ -18,18 +18,20 @@
   border: solid 4px;
   border-color: black;
   box-shadow: 0px 5px 15px;
-  border-radius: 3%;
+  border-radius: 10px;
   margin: 3%;
 }
 #header--title {
-  font-size: 30pt;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 26pt;
   font-weight: 100;
   color: rgb(241, 241, 241);
   background-color: rgb(0, 73, 75);
 }
 .header--users__Link {
   background-color: rgb(0, 73, 75);
-  font-size: 20pt;
+  font-size: 16pt;
   font-weight: 100;
   color: rgb(241, 241, 241);
   text-align: center;
@@ -43,6 +45,7 @@
 }
 .articles--sort {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   /* justify-content: space-between; */
   background-color: rgb(241, 241, 241);
@@ -52,14 +55,15 @@
   border: solid 1px;
   border-color: black;
   box-shadow: 0px 5px 15px;
-  border-radius: 3%;
-  margin: 1%;
+  border-radius: 3px;
+  margin: 2%;
   color: rgb(0, 73, 75);
+  max-width: 1200px;
 }
 .articles--sort__click {
   background-color: rgb(241, 241, 241);
   color: rgb(0, 73, 75);
-  border-radius: 10%;
+  border-radius: 3px;
 }
 .articles-list-area {
   border: 2px;
@@ -69,15 +73,16 @@
   background-color: rgb(241, 241, 241);
   color: rgb(0, 73, 75);
   border: solid 1px;
-  padding: 1%;
-  border-radius: 10%;
-  margin-left: 2%;
+  margin-left: 30px;
+  padding: 15px;
+  margin-top: 5px;
+  border-radius: 15px;
 }
 .article-card {
   background-color: white;
   border: solid 3px;
   border-color: rgb(2, 28, 29);
-  border-radius: 3%;
+  border-radius: 7px;
   margin-left: 10px;
   margin-right: 10px;
   padding: 3%;
@@ -85,6 +90,8 @@
   margin: 2%;
   box-shadow: 0px 5px 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  max-width: 1200px;
+  justify-content: center;
   /* display: flex;
   justify-content: space-between; */
 }
@@ -113,7 +120,8 @@
   text-shadow: 20px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  display: flex;
+  display: flex ;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   background-color: rgb(241, 241, 241);
@@ -139,14 +147,14 @@
   border: solid 4px;
   border-color: black;
   box-shadow: 0px 5px 15px;
-  border-radius: 3%;
+  border-radius: 7px;
   margin: 3%;
 }
 .article--body {
   background-color: white;
   border: solid 3px;
   border-color: rgb(0, 73, 75);
-  border-radius: 3%;
+  border-radius: 7px;
   margin-left: 5%;
   margin-right: 5%;
   padding: 3%;
@@ -156,7 +164,7 @@
 .article--votes__button {
   border: solid 2px;
   border-color: rgb(0, 73, 75);
-  border-radius: 10%;
+  border-radius: 10px;
   margin: 5px;
   padding: 2%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -200,7 +208,7 @@
   border: solid 1px;
   border-color: black;
   box-shadow: 0px 5px 15px;
-  border-radius: 3%;
+  border-radius: 7px;
   margin: 1%;
   color: rgb(0, 73, 75);
   justify-content: space-between;
@@ -208,7 +216,7 @@
 .user--card {
   border: solid 3px;
   border-color: rgb(15, 15, 15);
-  border-radius: 3%;
+  border-radius: 7px;
   margin-left: 10px;
   margin-right: 10px;
   padding: 3%;
@@ -222,8 +230,9 @@
 .user--login__btn {
   background-color: rgb(0, 73, 75);
   color: antiquewhite;
-  padding: 1.2%;
-  margin: 2%;
+  padding: 15px;
+  margin-top: 5px;
+  border-radius: 15px;
 }
 /* .user--login__btnArea {
   align-items: right;
@@ -238,7 +247,7 @@
   align-content: center;
   font-weight: 350;
   border: solid 2px;
-  border-radius: 5%;
+  border-radius: 7px;
   border-color: rgb(0, 73, 75);
   background-color: rgb(230, 230, 230);
   margin-left: 50%;

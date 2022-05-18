@@ -57,16 +57,18 @@ export default function DisplayArticles() {
     <div className="articles--overall">
           <div className="articles--sort"><p> Sort by: </p>
           {sort_by.map((sort)=> {
-           return (<ul className="articles--sort">
-              <li className="articles--sort__click" 
-              onClick={()=>{ setSearchParams({sort_by: sort})}}>
-                {sort}
-              </li>
-            </ul>
+           return (
+            <ul>
+            <button className="user--login__btn" 
+            onClick={()=>{ setSearchParams({sort_by: sort})}}>
+              {sort}
+            </button>
+          </ul>
             )
           })}
-          </div>
           <button id="articles--order__btn" onClick={()=> {toggle()}}>Order: {ord}</button>
+          </div>
+
       <div className="articles-list-area">
       {articles.map((article) => {
         return (
@@ -76,13 +78,14 @@ export default function DisplayArticles() {
               </Link>
               <div className ="article-card-details">
             <div className="article-left">
-              <dt>{article.author}</dt>
+              <h4>{article.author}</h4>
               <dt>{article.created_at.slice(0,-8).replace("T"," ")}</dt>
+              <dt>{article.topic}</dt>
             </div>
           <div className="article-right">
-              <dt>{article.topic}</dt>
-              <dt>Votes: {article.votes}</dt>
-              <dt>Comments: {article.comment_count}</dt>
+            <br></br><br></br><br></br>
+              <dt>{article.votes} votes</dt>
+              <dt>{article.comment_count} comments</dt>
               </div>
           </div>
           </div>

@@ -69,27 +69,28 @@ export default function CreateComment() {
             <main>
                 <form onSubmit={handleSubmit} className="comment--form">
                     <fieldset>
-                        <legend>Post Comment:</legend>
-                        <label htmlFor="comment">Input here: </label> <br />
+                        <legend>Input text here:</legend>
+                        {/* <label htmlFor="comment">Input here: </label> <br /> */}
                         <input
                             id="input--comment"
                             type="text"
-                            size="30"
+                            size="40"
                             value={commentText}
                             onChange={(e) => {
                                 setMessage('')
                                 setCommentText(e.target.value)
                             }}/><br /><br />
-                        <button type="submit">Submit</button>
+                        <button type="submit" className="user--login__btn">Submit</button>
+                        <br /><br />
+                        <Message />
                     </fieldset>
                 </form>
             </main>
-        <Message />
         <IsPosting /><br/>
-        <button className="user--login__btn">
-            <Link to={`/articles/${article_id}`}><h4 id="articlereturn--postcomment">
-                Return to Article</h4></Link>
-        </button>
+
+            <Link to={`/articles/${article_id}`}><button className="user--login__btn">Return to Article</button>
+                </Link>
+
         </div>
 )
 
