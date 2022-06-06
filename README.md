@@ -4,6 +4,8 @@ This repository comprises the front-end to my news website, built as part of the
 
 The project is built using React JS which sends requests to my [back-end project](https://github.com/jd4545/News-Project)
 
+Find the hosted version [here](https://jdnewsapp.netlify.app/)
+
 ## Project highlights:
 - Responsive to mobile
 - Styled with CSS
